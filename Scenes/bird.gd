@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Bird
 
-@export var gravity = 900.0
+@export var gravity = 700.0
 @export var jump_force = -300.0
 @export var rotation_speed = 2
 
