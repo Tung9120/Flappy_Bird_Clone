@@ -9,13 +9,19 @@ class_name Bird
 @onready var animation_player = $AnimationPlayer
 
 var max_speed = 400
+var is_started = false
 
 func _ready():
 	velocity = Vector2.ZERO
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
+		if !is_started:
+			is_started = true
 		jump()
+		
+	if !is_started:
+		return
 		
 	velocity.y += gravity * delta
 	
